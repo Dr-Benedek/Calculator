@@ -1,0 +1,152 @@
+body{
+    max-width: 80%;
+    margin: auto;
+}
+img{
+    width: 10%;
+}
+img:hover{
+    cursor: pointer;
+}
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px 15px;
+    grid-auto-flow: row;
+    background-color: gray;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    max-width: 30%;
+    margin: auto;
+    border: 1px solid rgb(0, 153, 255);
+    grid-template-areas:
+      "Top Top Top Top"
+      "C CE X2 oszt"
+      "szam7 szam8 szam9 szorzas"
+      "szam4 szam5 szam6 kivon"
+      "szam1 szam2 szam3 oszead"
+      "pluszmin szam0 tizedes egyenlo";
+  }
+
+  .container .Top * {
+    border: none;
+    background-color: gray;
+    border-radius: 0;
+  }
+  
+.container *{
+    border-radius: 10px;
+    background-color: rgb(104, 104, 104);
+}  
+  .C {
+    grid-area: C; 
+}
+  
+  .CE {
+    grid-area: CE; 
+}
+  
+  .X2 {
+    grid-area: X2; 
+}
+  
+  .oszt {
+    grid-area: oszt; 
+}
+  
+  .szam7 { 
+    grid-area: szam7; 
+}
+  
+  .szam8 { 
+    grid-area: szam8; 
+}
+  
+  .szam9 { 
+    -area: szam9; 
+}
+  
+  .szorzas { 
+    grid-area: szorzas; 
+}
+  
+  .szam4 { 
+    grid-area: szam4; 
+}
+  
+  .szam5 {
+    grid-area: szam5; 
+}
+  
+  .szam6 {
+    grid-area: szam6; 
+}
+  
+  .kivon {
+    grid-area: kivon;
+}
+  
+  .szam1 {
+    grid-area: szam1;
+}
+  
+  .szam2 {
+    grid-area: szam2; 
+}
+  
+  .szam3 { 
+    grid-area: szam3;
+}
+  
+  .oszead {
+    grid-area: oszead;
+}
+  
+  .pluszmin {
+    grid-area: pluszmin;
+}
+  
+  .szam0 {
+    grid-area: szam0;
+}
+  
+  .tizedes {
+    grid-area: tizedes;
+}
+  
+  .egyenlo {
+    grid-area: egyenlo;
+    }
+  
+  .Top {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Topbar"
+      "Display";
+    grid-area: Top;
+  }
+  
+  .Display { grid-area: Display;}
+  
+  .Topbar {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Calculator Calculator . . . Min Max Exit";
+    grid-area: Topbar;
+  }
+  
+  .Calculator { grid-area: Calculator; }
+  
+  .Exit { grid-area: Exit; }
+  
+  .Max { grid-area: Max; }
+  
+  .Min { grid-area: Min; }
+  
