@@ -6,37 +6,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href=""><img src="calc.png" alt=""></a>
-    <div class="container">
-        <div class="Top">
-            <div class="Display"></div>
-            <div class="Topbar">
-              <div class="Calculator">Calculator</div>
-              <div class="Min">_</div>
-              <div class="Max">O</div>
-              <div class="Exit">X</div>
-            </div>
-        </div>
-        <div class="C">C</div>
-        <div class="CE">CE</div>
-        <div class="X2">x<sup>2</sup></div>
-        <div class="oszt"></div>
-        <div class="szam7">7</div>
-        <div class="szam8">8</div>
-        <div class="szam9">9</div>
-        <div class="szorzas">x</div>
-        <div class="szam4">4</div>
-        <div class="szam5">5</div>
-        <div class="szam6">6</div>
-        <div class="kivon">-</div>
-        <div class="szam1">1</div>
-        <div class="szam2">2</div>
-        <div class="szam3">3</div>
-        <div class="oszead">+</div>
-        <div class="pluszmin"></div>
-        <div class="szam0">0</div>
-        <div class="tizedes">.</div>
-        <div class="egyenlo">=</div>
+  <div class="top">
+    <img id="small-calc" src="calc.png" alt="">
+  </div>
+  <div class="base">
+    <div class="calculator" id="calculator">
+      <header class="header">
+          <div class="icon">
+              <i class="fa fa-calculator"></i>
+          </div>
+          <h1>Calculator</h1>
+          <div class="controls">
+              <button class="minimize">🗕</button>
+              <button class="maximize">🗖</button>
+              <button class="close" id="close">×</button>
+          </div>
+      </header>
+      <div class="display">
+          <div class="small-display" id="smallDisplay"></div>
+          <div class="large-display" id="largeDisplay">0</div>
       </div>
+      <div class="buttons">
+          <button class="button btn-operation">C</button>
+          <button class="button btn-operation">CE</button>
+          <button class="button btn-operation">x²</button>
+          <button class="button btn-operation">/</button>
+          <button class="button">7</button>
+          <button class="button">8</button>
+          <button class="button">9</button>
+          <button class="button btn-operation">*</button>
+          <button class="button">4</button>
+          <button class="button">5</button>
+          <button class="button">6</button>
+          <button class="button btn-operation">-</button>
+          <button class="button">1</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+          <button class="button btn-operation">+</button>
+          <button class="button" id="plusMinus">±</button>
+          <button class="button">0</button>
+          <button class="button">.</button>
+          <button class="button equals">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

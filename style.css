@@ -1,152 +1,112 @@
-body{
-    max-width: 80%;
-    margin: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-img{
-    width: 10%;
-}
-img:hover{
-    cursor: pointer;
-}
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 15px 15px;
-    grid-auto-flow: row;
-    background-color: gray;
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    max-width: 30%;
-    margin: auto;
-    border: 1px solid rgb(0, 153, 255);
-    grid-template-areas:
-      "Top Top Top Top"
-      "C CE X2 oszt"
-      "szam7 szam8 szam9 szorzas"
-      "szam4 szam5 szam6 kivon"
-      "szam1 szam2 szam3 oszead"
-      "pluszmin szam0 tizedes egyenlo";
-  }
 
-  .container .Top * {
-    border: none;
-    background-color: gray;
-    border-radius: 0;
-  }
-  
-.container *{
-    border-radius: 10px;
-    background-color: rgb(104, 104, 104);
-}  
-  .C {
-    grid-area: C; 
+.top{
+  max-width: 100%;
+  height: 40px;
 }
-  
-  .CE {
-    grid-area: CE; 
+
+.top img{
+  width: 60px;
+  cursor: pointer;
 }
-  
-  .X2 {
-    grid-area: X2; 
+
+.base{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
-  
-  .oszt {
-    grid-area: oszt; 
+
+.calculator {
+  display: none;
+  width: 300px;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  user-select: none;
 }
-  
-  .szam7 { 
-    grid-area: szam7; 
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 10px;
 }
-  
-  .szam8 { 
-    grid-area: szam8; 
+
+.icon {
+  font-size: 20px;
 }
-  
-  .szam9 { 
-    -area: szam9; 
+
+.header h1 {
+  font-size: 18px;
+  margin: 0;
 }
-  
-  .szorzas { 
-    grid-area: szorzas; 
+
+.controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
 }
-  
-  .szam4 { 
-    grid-area: szam4; 
+
+.display {
+  background: #222;
+  padding: 15px;
+  text-align: right;
+  height: 75px;
 }
-  
-  .szam5 {
-    grid-area: szam5; 
+
+.small-display {
+  font-size: 17px;
+  color: #888;
+
 }
-  
-  .szam6 {
-    grid-area: szam6; 
+
+.large-display {
+  font-size: 28px;
+  font-weight: bold;
 }
-  
-  .kivon {
-    grid-area: kivon;
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
 }
-  
-  .szam1 {
-    grid-area: szam1;
+
+.button {
+  background: #555;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
 }
-  
-  .szam2 {
-    grid-area: szam2; 
+
+.button:hover, .button:focus {
+  background: #777;
 }
-  
-  .szam3 { 
-    grid-area: szam3;
+
+.equals {
+  background-color: darkcyan;
 }
-  
-  .oszead {
-    grid-area: oszead;
+
+.equals:hover {
+  background-color: cyan;
 }
-  
-  .pluszmin {
-    grid-area: pluszmin;
+
+.btn-operation {
+  background-color: rgb(126, 126, 126);
 }
-  
-  .szam0 {
-    grid-area: szam0;
+
+.btn-operation:hover {
+  cursor: pointer;
+  background-color: rgb(100, 100, 100);
 }
-  
-  .tizedes {
-    grid-area: tizedes;
-}
-  
-  .egyenlo {
-    grid-area: egyenlo;
-    }
-  
-  .Top {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Topbar"
-      "Display";
-    grid-area: Top;
-  }
-  
-  .Display { grid-area: Display;}
-  
-  .Topbar {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Calculator Calculator . . . Min Max Exit";
-    grid-area: Topbar;
-  }
-  
-  .Calculator { grid-area: Calculator; }
-  
-  .Exit { grid-area: Exit; }
-  
-  .Max { grid-area: Max; }
-  
-  .Min { grid-area: Min; }
-  
