@@ -101,6 +101,9 @@
 .equals:hover {
   background-color: cyan;
 }
+.equalsc {
+  background-color: cyan;
+}
 
 .btn-operation {
   background-color: rgb(126, 126, 126);
@@ -109,4 +112,7 @@
 .btn-operation:hover {
   cursor: pointer;
   background-color: rgb(100, 100, 100);
+}
+.button.active {
+  background: rgb(100, 100, 100);
 }

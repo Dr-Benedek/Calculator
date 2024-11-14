@@ -63,34 +63,41 @@ document.querySelectorAll('.button').forEach(button => {
             updateDisplay();
         } else if (value === '=') {
             compute();
-        }else if(value === 'x²'){
-            currentOperand = currentOperand * currentOperand
+            button.classList.add('equalsc');
+            setTimeout(() => button.classList.remove('equalsc'), 100);
+        } else if (value === 'x²') {
+            currentOperand = currentOperand * currentOperand;
             largeDisplay.innerText = currentOperand;
-        } else if(value === '±'){
-            currentOperand = currentOperand * -1
+        } else if (value === '±') {
+            currentOperand = currentOperand * -1;
             largeDisplay.innerText = currentOperand;
         } else {
             chooseOperation(value);
         }
+        if (value !== '=') {
+            button.classList.add('active');
+            setTimeout(() => button.classList.remove('active'), 100);
+        }
     });
 });
 
+const keyToButtonMap = {
+    '0': '0', '1': '1', '2': '2', '3': '3',
+    '4': '4', '5': '5', '6': '6', '7': '7',
+    '8': '8', '9': '9', '.': '.',
+    '+': '+', '-': '-', '*': '*', '/': '/',
+    'Enter': '=', '=': '=',
+    'Backspace': 'CE', 'Delete': 'C'
+};
+
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    if (!isNaN(key) || key === '.') {
-        appendNumber(key);
-    } else if (key === 'Enter' || key === '=') {
-        compute();
-    } else if (key === 'Backspace') {
-        currentOperand = '';
-        updateDisplay();
-    } else if (key === 'Delete') {
-        currentOperand = '';
-        previousOperand = '';
-        operation = undefined;
-        updateDisplay();
-    } else if (['+', '-', '*', '/'].includes(key)) {
-        chooseOperation(key);
+    const buttonValue = keyToButtonMap[key];
+    if (buttonValue) {
+        const button = Array.from(document.querySelectorAll('.button')).find(btn => btn.innerText === buttonValue);
+        if (button) {
+            button.click();
+        }
     }
 });
 
@@ -103,11 +110,6 @@ document.addEventListener('keydown', (event) => {
 
 document.getElementById('small-calc').addEventListener('click', Bezar);
 document.getElementById('close').addEventListener('click', Bezar);
-
-// document.getElementById('plusMinus').addEventListener('click', () => {
-//     previousOperand = currentOperand * -1;
-//     largeDisplay.innerText = currentOperand;
-// });
 
 function Bezar(){
     if (!visible) {
