@@ -12,6 +12,7 @@ function appendNumber(number) {
 }
 
 function chooseOperation(op) {
+    console.log(op);
     if (currentOperand === '') return;
     if (previousOperand !== '') compute();
     operation = op;
@@ -62,6 +63,12 @@ document.querySelectorAll('.button').forEach(button => {
             updateDisplay();
         } else if (value === '=') {
             compute();
+        }else if(value === 'x²'){
+            currentOperand = currentOperand * currentOperand
+            largeDisplay.innerText = currentOperand;
+        } else if(value === '±'){
+            currentOperand = currentOperand * -1
+            largeDisplay.innerText = currentOperand;
         } else {
             chooseOperation(value);
         }
@@ -97,10 +104,10 @@ document.addEventListener('keydown', (event) => {
 document.getElementById('small-calc').addEventListener('click', Bezar);
 document.getElementById('close').addEventListener('click', Bezar);
 
-document.getElementById('plusMinus').addEventListener('click', () => {
-    currentOperand = currentOperand.substring(0, 1) == "-" ? currentOperand.split("-")[1] : "-" + currentOperand
-    updateDisplay();
-});
+// document.getElementById('plusMinus').addEventListener('click', () => {
+//     previousOperand = currentOperand * -1;
+//     largeDisplay.innerText = currentOperand;
+// });
 
 function Bezar(){
     if (!visible) {
